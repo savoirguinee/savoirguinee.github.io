@@ -1,1 +1,4 @@
-site_name: My Docs
+site_name: SAVOIR-GUINEE
+repo_url: https://github.com/savoirguinee/savoirguinee.github.io
+site_url: https://savoirguinee.github.io/
+theme: readthedocs
