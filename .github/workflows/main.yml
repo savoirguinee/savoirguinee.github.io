@@ -5,5 +5,8 @@ jobs:
   Mkdocs-project:
     runs-on: ubuntu-latest
     steps:
+      - name: "Clone repository"
+        uses: actions/checkout@v3
+
       - name: "List repository files"
         run: "ls -al"
