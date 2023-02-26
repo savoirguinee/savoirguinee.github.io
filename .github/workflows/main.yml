@@ -11,4 +11,12 @@ jobs:
       - name: "List repository files"
         run: "ls -al"
       - name: "Install python"
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: "Install mkdocs"
         run: pip install mkdocs
+      - name: "Deploy project"
+        run: mkdocs gh-deploy --force
+      - name: "finish"
+        run: echo "🎉 The job was successful."
