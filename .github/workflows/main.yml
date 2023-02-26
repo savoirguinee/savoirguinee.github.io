@@ -10,3 +10,5 @@ jobs:
 
       - name: "List repository files"
         run: "ls -al"
+      - name: "Install python"
+        run: pip install mkdocs
