@@ -1,6 +1,11 @@
 name: Github Action Demo
 on:
-  - push
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   Mkdocs-project:
     runs-on: ubuntu-latest
@@ -22,3 +27,9 @@ jobs:
         run: echo "🎉 The job was successful."
       - name: "show all env"
         run: printenv
+      - name: Login to docker
+        run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: Build docker image
+        run: docker build -t rougeo/bootcamp-devops:1.0.10 .
+      - name: Push docker image
+        run: docker push rougeo/bootcamp-devops:1.0.10
