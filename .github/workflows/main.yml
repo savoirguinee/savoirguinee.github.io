@@ -32,6 +32,6 @@ jobs:
       - name: Login to docker
         run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
       - name: Build docker image
-        run: docker build -t rougeo/bootcamp-devops:1.0.10 .
+        run: docker build -t rougeo/bootcamp-devops:${GITHUB_REF_NAME} .
       - name: Push docker image
-        run: docker push rougeo/bootcamp-devops:1.0.10
+        run: docker push rougeo/bootcamp-devops:${GITHUB_REF_NAME}
