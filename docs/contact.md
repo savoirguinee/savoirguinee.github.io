@@ -1,2 +1,0 @@
-# Contact
-contact@savoirguinee.com
